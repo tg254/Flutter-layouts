@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_layouts/app/Sign_In_button.dart';
 import 'package:test_layouts/common_widgets/custome_raised_button.dart';
+
+import 'Social_Signin_Button.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -26,35 +29,40 @@ class SignInPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.w600),
           ),
-          SizedBox(height: 8.0),
-          // ignore: deprecated_member_use
-          RaisedButton(
-            child: Text(
-              'Sign in with Google',
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 15.0,
-              ),
-            ),
+          SizedBox(height: 48.0),
+          Social_Signin_Button(
+            assestName: 'images/google-logo.png',
+            text: 'Sign in with Google',
+            textColor: Colors.black87,
             color: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(4.0),
-              ),
-            ),
             onPressed: () {},
           ),
           SizedBox(height: 8.0),
-          CustomeRaisedButton(
-            child: Text(
-              'Sign in with facebook',
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 15.0,
-              ),
-            ),
-            color: Colors.white,
-            borderRadius: 4.0,
+          Social_Signin_Button(
+            assestName: 'images/facebook-logo.png',
+            text: 'Sign in with Facebook',
+            textColor: Colors.white,
+            color: Color(0xFF334D92),
+            onPressed: () {},
+          ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            text: 'Sign in with Email',
+            textColor: Colors.white,
+            color: Colors.teal[700],
+            onPressed: () {},
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            'Or',
+            style: TextStyle(fontSize: 14.0, color: Colors.black87),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            text: 'Go anonymous',
+            textColor: Colors.black,
+            color: Colors.lime[300],
             onPressed: () {},
           ),
         ],
